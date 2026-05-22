@@ -34,14 +34,14 @@ Because he is highly technical, avoid generic "How to use ChatGPT" courses. Inst
 
 To see how Level 3 and 4 systems are built programmatically, he should explore the architecture of modern agent frameworks:
 
-* **LangGraph (by LangChain):** Exceptional for engineers because it models LLM interactions as **directed acyclic graphs (DAGs) and state machines**. Yousef can define explicit states, transitions, and conditional loops (e.g., "If the Verilog compilation fails, transition to the `FixCode` node; if it passes, transition to `GenerateTestbench`").
+* **LangGraph (by LangChain):** Exceptional for engineers because it models LLM interactions as **directed acyclic graphs (DAGs) and state machines**. A user can define explicit states, transitions, and conditional loops (e.g., "If the Verilog compilation fails, transition to the `FixCode` node; if it passes, transition to `GenerateTestbench`").
 * **Microsoft AutoGen / CrewAI:** Good for exploring multi-agent orchestrator-worker patterns, where one LLM acts as the hardware architect, another writes the RTL (Register-Transfer Level) code, and a third writes the verification scripts.
 
 ---
 
 ## 3. How to Apply This to AI Chip Design & Hardware EE
 
-If Yousef wants to introduce Level 3/4 capabilities to his hardware engineering workflow, he can build or leverage tools that automate the tedious parts of EDA (Electronic Design Automation).
+If the user wants to introduce Level 3/4 capabilities to his hardware engineering workflow, he can build or leverage tools that automate the tedious parts of EDA (Electronic Design Automation).
 
 Here are concrete project ideas he can experiment with using tools like `Claude Code` or custom Python scripts:
 
@@ -54,13 +54,13 @@ Here are concrete project ideas he can experiment with using tools like `Claude 
 
 ### The "Late Starter" Advantage
 
-Yousef's company being stuck at Level 1 is incredibly common in deeply specialized fields like hardware engineering. Hardware teams are conservative by design—mistakes cost millions in tape-outs.
+A high-tech company being stuck at Level 1 is incredibly common in deeply specialized fields like hardware engineering. Hardware teams are conservative by design—mistakes cost millions in tape-outs.
 
 However, because hardware design relies heavily on formal languages, strict syntax rules, and deterministic verification tools (linters, simulators, formal verification), it is **actually the perfect sandbox for Level 3/4 automation**. The LLM can constantly test its assumptions against an absolute, deterministic truth (the simulator).
 
 ---
 
-## Next Steps for Yousef
+## Next Steps for the EE expert
 
 If he wants a weekend project to break out of Level 1:
 
