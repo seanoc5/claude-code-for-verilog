@@ -22,7 +22,7 @@ module tb_uart_rx;
     uart_rx #(.CLKS_PER_BIT(CLKS_PER_BIT)) dut (.*);
 
     // Free-running clock
-    always #(CLK_PERIOD/2) clk = ~clk;
+    always #(CLK_PERIOD/2) clk <= ~clk;
 
     // Drive one UART frame onto rx (start, 8 data LSB-first, stop)
     task automatic send_byte(input logic [7:0] b);

@@ -1,3 +1,5 @@
+`timescale 1ns/1ps
+
 // uart_rx.sv — 8-N-1 UART receiver.
 //
 // 8 data bits, no parity, 1 stop bit. LSB first.
