@@ -20,10 +20,14 @@ module uart_rx #(
         IDLE, START, DATA, STOP, CLEANUP
     } state_t;
 
-    state_t state;
-    logic [$clog2(CLKS_PER_BIT)-1:0] clk_cnt;
-    logic [2:0]                      bit_idx;
-    logic [7:0]                      data_r;
+    localparam int CNT_W = $clog2(CLKS_PER_BIT);
+    localparam logic [CNT_W-1:0] BIT_MAX  = CLKS_PER_BIT - 1;
+    localparam logic [CNT_W-1:0] HALF_BIT = (CLKS_PER_BIT - 1) / 2;
+
+    state_t                state;
+    logic [CNT_W-1:0]      clk_cnt;
+    logic [2:0]            bit_idx;
+    logic [7:0]            data_r;
 
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
@@ -46,7 +50,7 @@ module uart_rx #(
 
                 START: begin
                     // Sample at the middle of the start bit to confirm it's real
-                    if (clk_cnt == (CLKS_PER_BIT-1)/2) begin
+                    if (clk_cnt == HALF_BIT) begin
                         if (rx == 1'b0) begin
                             clk_cnt <= '0;
                             state   <= DATA;
@@ -54,13 +58,13 @@ module uart_rx #(
                             state <= IDLE;  // glitch, not a real start
                         end
                     end else begin
-                        clk_cnt <= clk_cnt + 1;
+                        clk_cnt <= clk_cnt + 1'b1;
                     end
                 end
 
                 DATA: begin
-                    if (clk_cnt < CLKS_PER_BIT-1) begin
-                        clk_cnt <= clk_cnt + 1;
+                    if (clk_cnt < BIT_MAX) begin
+                        clk_cnt <= clk_cnt + 1'b1;
                     end else begin
                         clk_cnt         <= '0;
                         data_r[bit_idx] <= rx;
@@ -68,14 +72,14 @@ module uart_rx #(
                             bit_idx <= '0;
                             state   <= STOP;
                         end else begin
-                            bit_idx <= bit_idx + 1;
+                            bit_idx <= bit_idx + 1'b1;
                         end
                     end
                 end
 
                 STOP: begin
-                    if (clk_cnt < CLKS_PER_BIT-1) begin
-                        clk_cnt <= clk_cnt + 1;
+                    if (clk_cnt < BIT_MAX) begin
+                        clk_cnt <= clk_cnt + 1'b1;
                     end else begin
                         data      <= data_r;
                         valid     <= 1'b1;
