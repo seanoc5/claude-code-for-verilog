@@ -51,6 +51,12 @@ Read **[docs/WALKTHROUGH.md](docs/WALKTHROUGH.md)**. That document is the whole
 point of the repo. It explains the level-1 → level-2 → level-3 progression and
 gives concrete exercises to try with Claude Code running locally.
 
+For a complementary perspective, see
+**[docs/Gemini-Suggestions.md](docs/Gemini-Suggestions.md)** — Gemini's take
+on the same level progression, with pointers to agent frameworks (LangGraph,
+AutoGen), Anthropic's "Building Effective Agents", and a level-by-level table
+mapping the workflow stages to concrete EDA / Verilog applications.
+
 ## Claude Code
 
 The CLI lives at https://docs.claude.com/en/docs/claude-code. Once installed,

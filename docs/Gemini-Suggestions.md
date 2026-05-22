@@ -11,7 +11,9 @@ Here is a roadmap of concepts, frameworks, and specific mental shifts tailored f
 ## 1. The Core Mental Shift: From Chat to Architecture
 
 To move past Level 1/2, Yousef needs to stop thinking about "prompt engineering" and start thinking about **agentic workflows**. Instead of trying to get a single massive prompt to output perfect Verilog, Level 3+ engineering breaks the problem down into loops.
-[Common Agentic Workflow Design Patterns. Source: Workflows.guru](https://www.workflows.guru/blogs/agentic-workflows-patterns)
+![Common Agentic Workflow Design Patterns](img.png)
+
+*Source: [Common Agentic Workflow Design Patterns — Workflows.guru](https://www.workflows.guru/blogs/agentic-workflows-patterns)*
 
 For an EE, the **Evaluator-Optimizer** loop is an incredibly natural fit. It mirrors how chip design works: you write code, you run a test bench (simulation), you check for errors, and you iterate.
 
