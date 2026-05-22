@@ -21,8 +21,8 @@ module uart_rx #(
     } state_t;
 
     localparam int CNT_W = $clog2(CLKS_PER_BIT);
-    localparam logic [CNT_W-1:0] BIT_MAX  = CLKS_PER_BIT - 1;
-    localparam logic [CNT_W-1:0] HALF_BIT = (CLKS_PER_BIT - 1) / 2;
+    localparam logic [CNT_W-1:0] BIT_MAX  = CNT_W'(CLKS_PER_BIT - 1);
+    localparam logic [CNT_W-1:0] HALF_BIT = CNT_W'((CLKS_PER_BIT - 1) / 2);
 
     state_t                state;
     logic [CNT_W-1:0]      clk_cnt;
