@@ -10,7 +10,7 @@ Here is a roadmap of concepts, frameworks, and specific mental shifts tailored f
 
 ## 1. The Core Mental Shift: From Chat to Architecture
 
-To move past Level 1/2, Yousef needs to stop thinking about "prompt engineering" and start thinking about **agentic workflows**. Instead of trying to get a single massive prompt to output perfect Verilog, Level 3+ engineering breaks the problem down into loops.
+To move past Level 1/2, an EE expert needs to stop thinking about "prompt engineering" and start thinking about **agentic workflows**. Instead of trying to get a single massive prompt to output perfect Verilog, Level 3+ engineering breaks the problem down into loops.
 ![Common Agentic Workflow Design Patterns](img.png)
 
 *Source: [Common Agentic Workflow Design Patterns — Workflows.guru](https://www.workflows.guru/blogs/agentic-workflows-patterns)*
